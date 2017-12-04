@@ -69,7 +69,7 @@ Table of Contents
    4.  Security Considerations . . . . . . . . . . . . . . . . . . .   4
      4.1.  Privacy Considerations  . . . . . . . . . . . . . . . . .   4
    5.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   4
-     5.1.  captive-portal.json Well-Known URI Registration . . . . .   4
+     5.1.  captive-portal.json Well-Known URI Registration . . . . .   5
    6.  Acknowledgments . . . . . . . . . . . . . . . . . . . . . . .   5
    7.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   5
      7.1.  Normative References  . . . . . . . . . . . . . . . . . .   5
@@ -185,13 +185,17 @@ Internet-Draft             Captive Portal API              December 2017
    GET /.well-known/captive-portal.json
    Host: example.org
 
+
    The server then responds with the JSON content for that client:
 
 HTTP/1.1 200 OK
+Cache-Control: private
+Date: Mon, 04 Dec 2013 05:07:35 GMT
+
 {
    "permitted": false,
    "hmac-key": "7cec81acce3176b262a46363666a01881b0e3bf60d97a98b5409b71cc60a1ac0"
-   "user-portal-url": "https:example.org/portal.html"
+   "user-portal-url": "https://example.org/portal.html"
    "expire-date": "2014-01-01T23:28:56.782Z":
 }
 
@@ -211,13 +215,9 @@ HTTP/1.1 200 OK
    This document defines one ".well-known" URIs using the registration
    procedure and template from Section 5.1 of [RFC5785].
 
-5.1.  captive-portal.json Well-Known URI Registration
 
-   URI suffix: captive-portal.json
 
-   Change controller: IETF
 
-   Specification document(s): This RFC
 
 
 
@@ -225,6 +225,14 @@ Pauly & Thakore           Expires June 7, 2018                  [Page 4]
 
 Internet-Draft             Captive Portal API              December 2017
 
+
+5.1.  captive-portal.json Well-Known URI Registration
+
+   URI suffix: captive-portal.json
+
+   Change controller: IETF
+
+   Specification document(s): This RFC
 
    Related information: None
 
@@ -260,14 +268,6 @@ Internet-Draft             Captive Portal API              December 2017
 
 Authors' Addresses
 
-   Tommy Pauly (editor)
-   Apple Inc.
-   1 Infinite Loop
-   Cupertino, California 95014
-   United States of America
-
-   Email: tpauly@apple.com
-
 
 
 
@@ -282,6 +282,15 @@ Pauly & Thakore           Expires June 7, 2018                  [Page 5]
 Internet-Draft             Captive Portal API              December 2017
 
 
+   Tommy Pauly (editor)
+   Apple Inc.
+   1 Infinite Loop
+   Cupertino, California 95014
+   United States of America
+
+   Email: tpauly@apple.com
+
+
    Darshak Thakore (editor)
    CableLabs
    858 Coal Creek Circle
@@ -289,15 +298,6 @@ Internet-Draft             Captive Portal API              December 2017
    United States of America
 
    Email: d.thakore@cablelabs.com
-
-
-
-
-
-
-
-
-
 
 
 
